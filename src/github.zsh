@@ -16,12 +16,3 @@ function issues::task::me::create {
     hub issue create -a luismayta -m "${task}"
 }
 
-function issues {
-    local task
-    task="${1}"
-    if [ -n "${task}" ]; then
-        issues::task::me::create "${task}"
-        return
-    fi
-    issues::search
-}
