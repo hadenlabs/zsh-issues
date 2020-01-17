@@ -32,3 +32,5 @@ function issues {
     fi
     issues::search
 }
+
+issues::factory
