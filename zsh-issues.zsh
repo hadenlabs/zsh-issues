@@ -18,23 +18,17 @@ ISSUES_MESSAGE_REQUIRED_BREW="it's neccesary have brew for install or add luisma
 # shellcheck source=/dev/null
 source "${ISSUES_SOURCE_PATH}"/base.zsh
 
-
-function issues::packages {
-    message_info "Install packages for $issues_package_name"
-    message_success "Installed packages for $issues_package_name"
+function issues::factory {
+    # shellcheck source=/dev/null
+    source "${ISSUES_SOURCE_PATH}"/github.zsh
 }
 
-function issues::install {
-    message_info "Installing $issues_package_name"
-    message_success "Installed $issues_package_name"
+function issues {
+    local task
+    task="${1}"
+    if [ -n "${task}" ]; then
+        issues::task::me::create "${task}"
+        return
+    fi
+    issues::search
 }
-
-function issues::post_install {
-    message_info "Post Install $issues_package_name"
-    message_success "Success Install $issues_package_name"
-}
-
-if ! type -p issues > /dev/null; then
-    issues::install
-    issues::post_install
-fi
