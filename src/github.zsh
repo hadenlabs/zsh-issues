@@ -1,6 +1,8 @@
 #!/usr/bin/env ksh
 # -*- coding: utf-8 -*-
-export GITHUB_USER:="$(git config github.user)"
+GITHUB_USER="$(git config github.user)"
+
+[ -z "${GITHUB_USER}" ] && message_warning "You should set 'git config --global github.user'."
 
 function issues::list {
     hub issue
