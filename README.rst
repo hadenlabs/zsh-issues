@@ -1,6 +1,8 @@
 zsh-issues
 ==========
 
+|Build Status| |GitHub issues| |GitHub license|
+
 issues managemes for gitlab, jira and bitbucket
 
 :Version: 0.0.0
@@ -25,6 +27,7 @@ Dependencies
     https://github.com/mafredri/zsh-async
     https://github.com/luismayta/zsh-notify
     https://github.com/luismayta/zsh-functions
+
 
 Installation
 ------------
