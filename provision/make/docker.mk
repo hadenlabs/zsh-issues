@@ -41,9 +41,9 @@ docker.build:
 	elif [ -z "${stage}" ] && [ -n "${service}" ]; then \
 		$(docker-dev) build ${service} ${args}; \
 	elif [ -n "${stage}" ] && [ -z "${service}" ]; then \
-		$(docker_compose) -f ${PATH_DOCKER_COMPOSE}/${stage}.yml build ${args}; \
+		$(docker-compose) -f ${PATH_DOCKER_COMPOSE}/${stage}.yml build ${args}; \
 	elif [ -n "${stage}" ] && [ -n "${service}" ]; then \
-		$(docker_compose) -f ${PATH_DOCKER_COMPOSE}/${stage}.yml build ${service} ${args}; \
+		$(docker-compose) -f ${PATH_DOCKER_COMPOSE}/${stage}.yml build ${service} ${args}; \
 	fi
 
 docker.log:
@@ -60,7 +60,7 @@ docker.log:
 
 docker.down:
 	@echo $(MESSAGE) "Down Services Stage: ${stage}"
-	@if [ -z  "${stage}" ]; then \
+	@if [ -z "${stage}" ]; then \
 		$(docker-dev) down --remove-orphans; \
 		$(docker-test) down --remove-orphans; \
 	else \
