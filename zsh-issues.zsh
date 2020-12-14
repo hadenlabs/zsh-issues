@@ -7,30 +7,16 @@
 # Authors:
 #   Luis Mayta <slovacus@gmail.com>
 #
-issues_package_name="issues"
-
-ISSUES_PLUGIN_DIR=$(dirname "${0}":A)
-ISSUES_SOURCE_PATH="${ISSUES_PLUGIN_DIR}"/src
-
-# messages
-ISSUES_MESSAGE_REQUIRED_BREW="it's neccesary have brew for install or add luismayta/zsh-brew"
+ZSH_ISSUES_PATH=$(dirname "${0}")
 
 # shellcheck source=/dev/null
-source "${ISSUES_SOURCE_PATH}"/base.zsh
+source "${ZSH_ISSUES_PATH}"/config/main.zsh
 
-function issues::factory {
-    # shellcheck source=/dev/null
-    source "${ISSUES_SOURCE_PATH}"/github.zsh
-}
+# shellcheck source=/dev/null
+source "${ZSH_ISSUES_PATH}"/internal/main.zsh
 
-function issues {
-    local task
-    task="${1}"
-    if [ -n "${task}" ]; then
-        issues::task::me::create "${task}"
-        return
-    fi
-    issues::search
-}
+# shellcheck source=/dev/null
+source "${ZSH_ISSUES_PATH}"/provider/main.zsh
 
-issues::factory
+# shellcheck source=/dev/null
+source "${ZSH_ISSUES_PATH}"/pkg/main.zsh
