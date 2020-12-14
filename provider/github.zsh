@@ -5,7 +5,7 @@ export GITHUB_USER="$(git config github.user)"
 [ -z "${GITHUB_USER}" ] && message_warning "You should set 'git config --global github.user'."
 
 function issues::list {
-    hub issue
+    gh issue list
 }
 
 function issues::search {
@@ -15,5 +15,5 @@ function issues::search {
 function issues::task::me::create {
     local task
     task=${1}
-    hub issue create -a "${GITHUB_USER}" -m "${task}"
+    gh issue create --assignee "${GITHUB_USER}" --title "${task}"
 }
