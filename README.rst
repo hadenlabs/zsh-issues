@@ -1,9 +1,9 @@
 zsh-issues
 ==========
 
-|Build Status| |GitHub issues| |GitHub license|
-
 issues managemes for gitlab, jira and bitbucket
+
+|Build Status| |GitHub issues| |GitHub license|
 
 :Version: 0.0.0
 :Web: https://github.com/luismayta/zsh-issues
@@ -25,9 +25,9 @@ Dependencies
 .. code-block:: bash
 
     https://github.com/mafredri/zsh-async
+    https://github.com/luismayta/zsh-core
     https://github.com/luismayta/zsh-notify
     https://github.com/luismayta/zsh-functions
-
 
 Installation
 ------------
@@ -80,18 +80,18 @@ install this plugin by doing the following:
 3. Enjoy!
 
 Quick Start
-===========
+-----------
 
 - Fork this repository
 
 Usage
------
+^^^^^
 
 - Install dependences
 
 .. code-block:: bash
 
-    λ make setup
+  λ make setup
 
 Support
 -------
@@ -159,7 +159,7 @@ Made with :coffee: and :pizza: by `Luis Mayta`_ and `equipindustry`_.
 
 
 .. _`Github`: https://github.com/luismayta
-.. _`Linkedin`: https://www.linkedin.com/in/luismayta
+.. _`Linkedin`: https://pe.linkedin.com/in/luismayta
 .. _`Email`: slovacus@gmail.com
     :target: mailto:slovacus@gmail.com
 .. _`Twitter`: https://twitter.com/slovacus
@@ -175,7 +175,7 @@ Made with :coffee: and :pizza: by `Luis Mayta`_ and `equipindustry`_.
 
 .. Team:
 .. |Luis Mayta| image:: https://github.com/luismayta.png?size=100
-    :target: https://github.com/luismayta
+   :target: https://github.com/luismayta
 
 .. Footer:
 .. |linkedin| image:: http://www.linkedin.com/img/webpromo/btn_liprofile_blue_80x15.png
@@ -183,7 +183,7 @@ Made with :coffee: and :pizza: by `Luis Mayta`_ and `equipindustry`_.
 .. |beacon| image:: https://ga-beacon.appspot.com/UA-65019326-1/github.com/luismayta/zsh-issues/readme
     :target: https://github.com/luismayta/zsh-issues
 .. |made| image:: https://img.shields.io/badge/Made%20with-Zsh-1f425f.svg
-    :target: http://www.zsh.org
+   :target: http://www.zsh.org
 
 .. Dependences:
 
