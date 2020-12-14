@@ -20,3 +20,14 @@ function issues::internal::rsync::install {
     brew install rsync
     message_success "Installed rsync ${ISSUES_PACKAGE_NAME}"
 }
+
+function issues::internal::fzf::install {
+    # shellcheck disable=SC2154
+    message_info "Installing fzf for ${ISSUES_PACKAGE_NAME}"
+    if ! type -p brew > /dev/null; then
+        message_warning "${ISSUES_MESSAGE_BREW}"
+        return
+    fi
+    brew install fzf
+    message_success "Installed fzf for ${ISSUES_PACKAGE_NAME}"
+}
