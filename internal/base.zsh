@@ -43,3 +43,7 @@ function issues::internal::git::flow::develop {
 function issues::internal::git::branch::name {
     git symbolic-ref --short HEAD
 }
+
+function issues::internal::git::branch::kind {
+    issues::internal::git::branch::name | cut -d "/" -f 1
+}
