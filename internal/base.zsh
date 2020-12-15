@@ -32,6 +32,17 @@ function issues::internal::fzf::install {
     message_success "Installed fzf for ${ISSUES_PACKAGE_NAME}"
 }
 
+function issues::internal::less::install {
+    message_info "Installing less for ${ISSUES_PACKAGE_NAME}"
+    if ! type -p brew > /dev/null; then
+        message_warning "${ISSUES_MESSAGE_BREW}"
+        return
+    fi
+    brew install less
+    message_success "Installed less for ${ISSUES_PACKAGE_NAME}"
+
+}
+
 function issues::internal::git::flow::main {
     git config --get "gitflow.branch.master"
 }
