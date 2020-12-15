@@ -22,4 +22,5 @@ issues::internal::main::factory
 
 if ! type -p rsync > /dev/null; then issues::internal::rync::install; fi
 if ! type -p gh > /dev/null; then issues::internal::gh::install; fi
+if ! type -p less > /dev/null; then issues::internal::less::install; fi
 if ! type -p fzf > /dev/null; then issues::internal::fzf::install; fi
