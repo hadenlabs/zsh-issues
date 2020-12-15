@@ -37,6 +37,9 @@ function issues::pr::branch::base {
     feature*)
         issues::internal::git::flow::develop
         ;;
+    release*)
+        issues::internal::git::flow::develop
+        ;;
     hotfix*)
         issues::internal::git::flow::main
       ;;
