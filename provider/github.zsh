@@ -1,6 +1,7 @@
 #!/usr/bin/env ksh
 # -*- coding: utf-8 -*-
 export GITHUB_USER="$(git config github.user)"
+export ISSUES_TEMPLATES_PROVIDER="${ISSUES_TEMPLATES_PATH}/github/templates/PULL_REQUEST_TEMPLATE.md"
 
 [ -z "${GITHUB_USER}" ] && message_warning "You should set 'git config --global github.user'."
 
@@ -17,3 +18,41 @@ function issues::task::me::create {
     task=${1}
     gh issue create --assignee "${GITHUB_USER}" --title "${task}"
 }
+
+function issues::pr {
+    local title reviewers body
+    reviewers="cristhoperDev,christianquispe,Aireck2"
+    title="${1}"
+    gh pr create --base "$(issues::pr::branch::base)" \
+        --title "${title}" \
+        --body "$(issues::pr::body)" \
+        --reviewer "${reviewers}" \
+        --assignee "${GITHUB_USER}"
+}
+
+function issues::pr::branch::base {
+    local kind_issue
+    kind_issue="$(issues::internal::git::branch::kind)"
+    case "${kind_issue}" in
+    feature*)
+        issues::internal::git::flow::develop
+        ;;
+    hotfix*)
+        issues::internal::git::flow::main
+      ;;
+    esac
+}
+
+function issues::pr::changes {
+    local changes branch_ref new_ref
+    branch_ref="$(issues::pr::branch::base)"
+    new_ref="${2:-HEAD}"
+    git log "${branch_ref}...${new_ref}" --decorate=no --pretty='format:- %<(80,trunc)%s' | awk '{$1=$1;print}'
+}
+
+function issues::pr::body {
+    local changes
+    changes="$(issues::pr::changes)"
+    less "${ISSUES_TEMPLATES_PROVIDER}"
+}
+
