@@ -31,3 +31,15 @@ function issues::internal::fzf::install {
     brew install fzf
     message_success "Installed fzf for ${ISSUES_PACKAGE_NAME}"
 }
+
+function issues::internal::git::flow::main {
+    git config --get "gitflow.branch.master"
+}
+
+function issues::internal::git::flow::develop {
+    git config --get "gitflow.branch.develop"
+}
+
+function issues::internal::git::branch::name {
+    git symbolic-ref --short HEAD
+}
