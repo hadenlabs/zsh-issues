@@ -1,9 +1,12 @@
 #!/usr/bin/env ksh
 # -*- coding: utf-8 -*-
-export GITHUB_USER="$(git config github.user)"
 export ISSUES_TEMPLATES_PROVIDER="${ISSUES_TEMPLATES_PATH}/github/templates/PULL_REQUEST_TEMPLATE.md"
 
-[ -z "${GITHUB_USER}" ] && message_warning "You should set 'git config --global github.user'."
+[ -z "$(git config --global github.user)" ] && message_warning "You should set 'git config --global github.user'."
+
+function issues::username {
+    git config --global github.user
+}
 
 function issues::list {
     gh issue list
@@ -14,9 +17,10 @@ function issues::search {
 }
 
 function issues::task::me::create {
-    local task
+    local task username
+    username="$(issues::username)"
     task=${1}
-    gh issue create --assignee "${GITHUB_USER}" --title "${task}"
+    gh issue create --assignee "${username}" --title "${task}"
 }
 
 function issues::pr::reviews {
@@ -24,15 +28,16 @@ function issues::pr::reviews {
 }
 
 function issues::pr {
-    local title reviewers body
+    local title reviewers body assignee
     reviewers="$(issues::pr::reviews)"
     title="${1}"
     body="$(issues::pr::body)"
+    assignee="$(issues::username)"
     gh pr create --base "$(issues::pr::branch::base)" \
         --title "${title}" \
         --body "${body}" \
         --reviewer "${reviewers}" \
-        --assignee "${GITHUB_USER}"
+        --assignee "${assignee}"
 }
 
 function issues::pr::branch::base {
