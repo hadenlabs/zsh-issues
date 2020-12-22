@@ -19,13 +19,18 @@ function issues::task::me::create {
     gh issue create --assignee "${GITHUB_USER}" --title "${task}"
 }
 
+function issues::pr::reviews {
+    git config github.reviews
+}
+
 function issues::pr {
     local title reviewers body
-    reviewers="cristhoperDev,christianquispe,Aireck2"
+    reviewers="$(issues::pr::reviews)"
     title="${1}"
+    body="$(issues::pr::body)"
     gh pr create --base "$(issues::pr::branch::base)" \
         --title "${title}" \
-        --body "$(issues::pr::body)" \
+        --body "${body}" \
         --reviewer "${reviewers}" \
         --assignee "${GITHUB_USER}"
 }
