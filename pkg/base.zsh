@@ -6,6 +6,13 @@ function issues::dependences {
     message_success "Installed dependences for ${ISSUES_PACKAGE_NAME}"
 }
 
+function issues::pkg::config::setup {
+    if [ -n "${GITHUB_USER}" ]; then
+        git config --global github.user "${GITHUB_USER}"
+    fi
+}
+
+
 function issues {
     local task
     task="${1}"
