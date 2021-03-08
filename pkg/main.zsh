@@ -14,6 +14,7 @@ function issues::pkg::main::factory {
         source "${ZSH_ISSUES_PATH}"/pkg/linux.zsh
       ;;
     esac
+
     # shellcheck source=/dev/null
     source "${ZSH_ISSUES_PATH}"/pkg/helper.zsh
 
