@@ -25,27 +25,26 @@ on_project_start: make environment
 # on_project_stop: make docker.down
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
-# pre_window: eval $(env-secrets bw me/env)
+# pre_window: eval $(env-secrets bw github.com/hadenlabs/zsh-issues)
 # Pass command line options to tmux. Useful for specifying a different tmux.conf.
-# issues_options: -f ~/.tmux.mac.conf
+# tmux_options: -f ~/.tmux.mac.conf
 
 # Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
-# issues_command: byobu
+# tmux_command: byobu
 
 # Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
 startup_window: docker
 
 windows:
-  - editor:
-      layout: even-horizontal
-      panes:
-        - editor:
-        - pwd:
-        - pwd:
   - python:
       layout: main-vertical
       panes:
         - ipython:
+  - cloud:
+      layout: main-vertical
+      panes:
+        - cloud:
+        - databases:
   - docker:
       layout: main-vertical
       panes:
