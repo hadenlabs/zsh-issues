@@ -7,18 +7,6 @@
 # Name of this project
 name: zsh-issues
 
-company:
-  name: hadenlabs
-  description: |-
-    company labs
-  url: https://hadenlabs.com
-  github: https://github.com/hadenlabs
-  email: support@hadenlabs.com
-
-copyright:
-  name: Hadenlabs
-  url: https://hadenlabs.com
-
 email:
   support: support@hadenlabs.com
 
@@ -26,22 +14,25 @@ email:
 #logo: docs/logo.png
 
 # License of this project
-license: 'MIT'
+license: 'LGPLv3'
 
 # Canonical GitHub repo
 github_repo: hadenlabs/zsh-issues
 
 # Badges to display
 badges:
+  - name: GitHub tag (latest SemVer)
+    image: https://img.shields.io/github/v/tag/hadenlabs/zsh-issues.svg?label=latest&sort=semver
+    url: https://github.com/hadenlabs/zsh-issues/releases
   - name: Lint
     image: https://github.com/hadenlabs/zsh-issues/actions/workflows/lint.yml/badge.svg?branch=develop
     url: https://github.com/hadenlabs/zsh-issues/actions
-  - name: 'Issues'
-    image: 'https://img.shields.io/github/issues/hadenlabs/zsh-issues.svg'
-    url: 'https://github.com/hadenlabs/zsh-issues/issues'
-  - name: 'Latest Release'
-    image: 'https://img.shields.io/github/release/hadenlabs/zsh-issues.svg'
-    url: 'https://github.com/hadenlabs/zsh-issues/releases'
+  - name: Issues
+    image: https://img.shields.io/github/issues/hadenlabs/zsh-issues.svg
+    url: https://github.com/hadenlabs/zsh-issues/issues
+  - name: Latest Release
+    image: https://img.shields.io/github/release/hadenlabs/zsh-issues.svg
+    url: https://github.com/hadenlabs/zsh-issues/releases
 
 # Short description of this project
 description: |-
@@ -51,21 +42,12 @@ requirements: |-
 
   This is a list of plugins that need to be installed previously to enjoy all the goodies of this configuration:
 
-  ```{bash}
-  https://github.com/luismayta/zsh-core
-  https://github.com/luismayta/zsh-notify
-  ```
+  * [zsh-core](https://github.com/hadenlabs/zsh-core)
 
 installation:
   - 'docs/include/installation/oh-my-zsh.md'
   - 'docs/include/installation/antigen.md'
   - 'docs/include/installation/antibody.md'
 
-# How to use this project
-usage: |-
-  ```bash
-  make setup
-  ```
-
-examples:
-  - 'docs/examples/common.md'
+include:
+  - 'docs/functions.md'
