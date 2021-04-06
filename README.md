@@ -14,22 +14,15 @@
 
 # zsh-issues
 
-[![Lint](https://github.com/hadenlabs/zsh-issues/actions/workflows/lint.yml/badge.svg?branch=develop)](https://github.com/hadenlabs/zsh-issues/actions) [![Issues](https://img.shields.io/github/issues/hadenlabs/zsh-issues.svg)](https://github.com/hadenlabs/zsh-issues/issues) [![Latest Release](https://img.shields.io/github/release/hadenlabs/zsh-issues.svg)](https://github.com/hadenlabs/zsh-issues/releases)
+[![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/hadenlabs/zsh-issues.svg?label=latest&sort=semver)](https://github.com/hadenlabs/zsh-issues/releases) [![Lint](https://github.com/hadenlabs/zsh-issues/actions/workflows/lint.yml/badge.svg?branch=develop)](https://github.com/hadenlabs/zsh-issues/actions) [![Issues](https://img.shields.io/github/issues/hadenlabs/zsh-issues.svg)](https://github.com/hadenlabs/zsh-issues/issues) [![Latest Release](https://img.shields.io/github/release/hadenlabs/zsh-issues.svg)](https://github.com/hadenlabs/zsh-issues/releases) [![Beacon](https://ga-beacon.appspot.com/G-MZEK48EGE8/zsh-issues/readme)](https://github.com/hadenlabs/zsh-issues)
 
 zsh-issues for zsh plugin
-
-## :page_facing_up: License
-
-MIT is an open-sourced software licensed under the [MIT license](LICENSE.md).
 
 ## Requirements
 
 This is a list of plugins that need to be installed previously to enjoy all the goodies of this configuration:
 
-```{bash}
-https://github.com/luismayta/zsh-core
-https://github.com/luismayta/zsh-notify
-```
+- [zsh-core](https://github.com/hadenlabs/zsh-core)
 
 ## Installation
 
@@ -44,7 +37,7 @@ If you're using [oh-my-zsh](https://gitub.com/robbyrussell/oh-my-zsh), install t
 
 ### [antigen](https://github.com/zsh-users/antigen) users
 
-If you're using [Antigen](https://github.com/zsh-lovers/antigen), install this plugin by doing the following:
+If you're using [Antigen](https://github.com/zsh-users/antigen), install this plugin by doing the following:
 
 1.  Add `antigen bundle hadenlabs/zsh-issues` to your `.zshrc` where you're adding your other plugins.
 2.  Either open a new terminal to force zsh to load the new plugin, or run `antigen bundle hadenlabs/zsh-issues` in a running zsh session.
@@ -52,7 +45,7 @@ If you're using [Antigen](https://github.com/zsh-lovers/antigen), install this p
 
 ### [antibody](https://github.com/getantibody/antibody) users
 
-If you're using [Antigen](https://github.com/getantibody/antibody), install this plugin by doing the following:
+If you're using [Antibody](https://github.com/getantibody/antibody), install this plugin by doing the following:
 
 1.  Add :
 
@@ -65,21 +58,39 @@ to your `.zshrc` where you're adding your other plugins.
 2.  Either open a new terminal to force zsh to load the new plugin, or run `antibody bundle hadenlabs/zsh-issues` in a running zsh session.
 3.  Enjoy!
 
-## Usage
+## Functions
 
-```bash
-make setup
-```
+zsh issues includes a small utility `issues` to fetch and install new packages.
 
-## :page_facing_up: Examples
+#### `issues::install`
 
-### common
+Install issues.
+
+#### `issues::load`
+
+Load path issues.
+
+#### `issues::upgrade`
+
+Upgrade version issues.
+
+#### `issues::package::all::install`
+
+Install all package of issues.
+
+#### `issues::install::versions`
+
+Install versions of config for issues.
+
+#### `issues::install::version::global`
+
+Install a version global of issues.
 
 ## Help
 
 **Got a question?**
 
-File a GitHub [issue](https://github.com/hadenlabs/zsh-issues/issues), send us an [email](email) or join our [Slack Community](slack).
+File a GitHub [issue](https://github.com/hadenlabs/zsh-issues/issues).
 
 ## Contributing
 
@@ -87,9 +98,7 @@ File a GitHub [issue](https://github.com/hadenlabs/zsh-issues/issues), send us a
 
 Please use the [issue tracker](https://github.com/hadenlabs/zsh-issues/issues) to report any bugs or file feature requests.
 
-### Developing
-
-If you are interested in being a contributor and want to get involved in developing this project or [help out](https://hadenlabs.com) with our other projects, we would love to hear from you! Shoot us an [email](mailto:support@hadenlabs.com).
+### Development
 
 In general, PRs are welcome. We follow the typical "fork-and-pull" Git workflow.
 
@@ -101,9 +110,20 @@ In general, PRs are welcome. We follow the typical "fork-and-pull" Git workflow.
 
 **NOTE:** Be sure to rebase the latest changes from "upstream" before making a pull request!
 
-### Versioning
+## Module Versioning
 
-Releases are managed using github release feature. We use [Semantic Versioning](http://semver.org) for all the releases. Every change made to the code base will be referred to in the release notes (except for cleanups and refactorings).
+This Module follows the principles of [Semantic Versioning (SemVer)](https://semver.org/).
+
+Using the given version number of `MAJOR.MINOR.PATCH`, we apply the following constructs:
+
+1. Use the `MAJOR` version for incompatible changes.
+1. Use the `MINOR` version when adding functionality in a backwards compatible manner.
+1. Use the `PATCH` version when introducing backwards compatible bug fixes.
+
+### Backwards compatibility in `0.0.z` and `0.y.z` version
+
+- In the context of initial development, backwards compatibility in versions `0.0.z` is **not guaranteed** when `z` is increased. (Initial development)
+- In the context of pre-release, backwards compatibility in versions `0.y.z` is **not guaranteed** when `y` is increased. (Pre-release)
 
 ## Copyright
 
@@ -113,10 +133,10 @@ Copyright © 2018-2021 [Hadenlabs](https://hadenlabs.com)
 
 All other trademarks referenced herein are the property of their respective owners.
 
-## About
+## License
 
-This project is maintained and funded by [Hadenlabs](https://hadenlabs.com). Like it? Please let us know at <support@hadenlabs.com>
+The code and styles are licensed under the LGPLv3 license [See project license.](LICENSE).
 
-## Don't forget to 🌟 Star 🌟 the repo if you like this GitHub Action
+## Don't forget to 🌟 Star 🌟 the repo if you like zsh-issues
 
 [Your feedback is appreciated](https://github.com/hadenlabs/zsh-issues/issues)
