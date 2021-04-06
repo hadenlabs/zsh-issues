@@ -20,7 +20,7 @@ function issues::internal::main::factory {
 
 issues::internal::main::factory
 
-if ! type -p rsync > /dev/null; then issues::internal::rync::install; fi
-if ! type -p gh > /dev/null; then issues::internal::gh::install; fi
-if ! type -p less > /dev/null; then issues::internal::less::install; fi
-if ! type -p fzf > /dev/null; then issues::internal::fzf::install; fi
+if ! core::exists rsync; then core::install rsync; fi
+if ! core::exists gh; then core::install gh; fi
+if ! core::exists less; then core::install less; fi
+if ! core::exists fzf; then core::install fzf; fi
