@@ -18,9 +18,8 @@ function issues::search {
 
 function issues::task::me::create {
     local task username
-    username="$(issues::username)"
     task=${1}
-    gh issue create --assignee "${username}" --title "${task}"
+    gh issue create --title "${task}"
 }
 
 function issues::pr::reviews {
