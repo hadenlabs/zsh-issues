@@ -12,7 +12,6 @@ function issues::pkg::config::setup {
     fi
 }
 
-
 function issues {
     local task
     task="${1}"
