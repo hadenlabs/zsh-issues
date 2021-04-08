@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 export ISSUES_TEMPLATES_PROVIDER="${ISSUES_TEMPLATES_PATH}/github/templates/PULL_REQUEST_TEMPLATE.md"
 
+export ISSUES_SEARCH_ARGS="no:assignee sort:created-desc"
+
 [ -z "$(git config --global github.user)" ] && message_warning "You should set 'git config --global github.user'."
 
 function issues::username {
@@ -16,10 +18,70 @@ function issues::search {
     issues::list | fzf
 }
 
-function issues::task::me::create {
-    local task username
+function issues::task::create {
+    local task
     task=${1}
     gh issue create --title "${task}"
+}
+
+function issues::task::feat {
+    local task
+    task="feat: ${1}"
+    gh issue create --title "${task}" --body "" \
+        --assignee @me \
+        --label "status/backlog" \
+        --label "kind/feature" \
+        --label "priority/high"
+}
+
+function issues::task::fix {
+    local task
+    task="fix: ${1}"
+    gh issue create --title "${task}" --body "" \
+         --assignee @me \
+         --label "status/backlog" \
+         --label "kind/bug" \
+         --label "priority/critical"
+}
+
+function issues::task::perf {
+    local task
+    task="perf: ${1}"
+    gh issue create --title "${task}" --body "" \
+         --assignee @me \
+         --label "status/backlog" \
+         --label "kind/perf" \
+         --label "priority/medium"
+}
+
+function issues::task::docs {
+    local task
+    task="docs: ${1}"
+    gh issue create --title "${task}" --body "" \
+         --assignee @me \
+         --label "status/backlog" \
+         --label "kind/docs" \
+         --label "priority/medium"
+}
+
+function issues::task::refactor {
+    local task
+    task="refactor: ${1}"
+    gh issue create --title "${task}" --body "" \
+         --assignee @me \
+         --label "status/backlog" \
+         --label "kind/refactor" \
+         --label "priority/medium"
+}
+
+function issues::task::chore {
+    local task
+    task="chore: ${1}"
+    gh issue create --title "${task}" --body "" \
+        --assignee @me \
+        --label "status/backlog" \
+        --label "kind/chore" \
+        --label "priority/medium"
 }
 
 function issues::pr::reviews {
