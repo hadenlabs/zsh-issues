@@ -16,7 +16,7 @@ function issues {
     local task
     task="${1}"
     if [ -n "${task}" ]; then
-        issues::task::me::create "${task}"
+        issues::task::create "${task}"
         return
     fi
     issues::search
