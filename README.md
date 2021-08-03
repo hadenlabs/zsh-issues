@@ -14,11 +14,11 @@
 
  
 
+ [![Latest Release](https://img.shields.io/github/release/hadenlabs/zsh-issues)](https://github.com/hadenlabs/zsh-issues/releases) [![Lint](https://img.shields.io/github/workflow/status/hadenlabs/zsh-issues/lint-code)](https://github.com/hadenlabs/zsh-issues/actions?workflow=lint-code) [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit) [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow)](https://conventionalcommits.org) [![KeepAChangelog](https://img.shields.io/badge/Keep%20A%20Changelog-1.0.0-%23E05735)](https://keepachangelog.com)
+
 # zsh-issues
- [![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/hadenlabs/zsh-issues.svg?label=latest&sort=semver)](https://github.com/hadenlabs/zsh-issues/releases) [![Lint](https://github.com/hadenlabs/zsh-issues/actions/workflows/lint.yml/badge.svg?branch=develop)](https://github.com/hadenlabs/zsh-issues/actions) [![Issues](https://img.shields.io/github/issues/hadenlabs/zsh-issues.svg)](https://github.com/hadenlabs/zsh-issues/issues) [![Latest Release](https://img.shields.io/github/release/hadenlabs/zsh-issues.svg)](https://github.com/hadenlabs/zsh-issues/releases) [![Beacon](https://ga-beacon.appspot.com/G-MZEK48EGE8/zsh-issues/readme)](https://github.com/hadenlabs/zsh-issues)
 
  zsh-issues for zsh plugin 
-
 
 
 
@@ -193,7 +193,7 @@ All other trademarks referenced herein are the property of their respective owne
 
 ## License
 
-The code and styles are licensed under the LGPLv3 license [See project license.](LICENSE).
+The code and styles are licensed under the LGPL-3.0 license [See project license.](LICENSE).
 
 
 
