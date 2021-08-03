@@ -4,6 +4,7 @@ Contributions to zsh-issues are welcome.
 
 ## Getting Started
 
+
 ### Commits
 
 Follow [semantic commits](https://seesparkbox.com/foundry/semantic_commit_messages) to make `git log`{.interpreted-text role="command"} a little easier to follow.
@@ -48,15 +49,15 @@ Use [slash convention]() with the same leaders as `commits` e.g.:
 
 ### Code Submission
 
-1.  See if a [Pull Request](https://github.com/hadenlabs/zsh-issues/pull-requests/) exists
+1.  See if a [Pull Request](https://github.com/hadenlabs/zsh-issues/pulls/) exists
     - Add some comments or review the code to help it along
     - Don\'t be afraid to comment when logic needs clarification
-2.  Create a Fork and open a [Pull Request](https://github.com/hadenlabs/zsh-issues/pull-requests/) if needed
+2.  Create a Fork and open a [Pull Request](https://github.com/hadenlabs/zsh-issues/pulls/) if needed
 
 ### Code Review
 
 - Anyone can review code
-- Any [Pull Request](https://github.com/hadenlabs/zsh-issues/pull-requests/) should be closed or merged within a week
+- Any [Pull Request](https://github.com/hadenlabs/zsh-issues/pulls/) should be closed or merged within a week
 
 ### Code Acceptance
 
