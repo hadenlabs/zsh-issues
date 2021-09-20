@@ -26,7 +26,6 @@ function issues::internal::get::provider {
     echo "${provider_name}"
 }
 
-
 function issues::internal::git::branch::kind {
     issues::internal::git::branch::name | cut -d "/" -f 1
 }

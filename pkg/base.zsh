@@ -10,6 +10,10 @@ function issues::pkg::config::setup {
     if [ -n "${GITHUB_USER}" ]; then
         git config --global github.user "${GITHUB_USER}"
     fi
+
+    if [ -n "${GITLAB_USER}" ]; then
+        git config --global gitlab.user "${GITLAB_USER}"
+    fi
 }
 
 function issues {
