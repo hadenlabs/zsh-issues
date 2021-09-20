@@ -16,6 +16,10 @@ function issues::pkg::config::setup {
     fi
 }
 
+function issues::provider::factory {
+    issues::provider::main::factory
+}
+
 function issues {
     local task
     task="${1}"
