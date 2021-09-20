@@ -22,5 +22,6 @@ issues::internal::main::factory
 
 if ! core::exists rsync; then core::install rsync; fi
 if ! core::exists gh; then core::install gh; fi
+if ! core::exists glab; then core::install glab; fi
 if ! core::exists less; then core::install less; fi
 if ! core::exists fzf; then core::install fzf; fi
