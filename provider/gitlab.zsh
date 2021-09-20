@@ -24,7 +24,7 @@ function issues::task::create {
 function issues::task::feat {
     local task
     task="feat: ${1}"
-    glab issue create --title "${task}" --body "" \
+    glab issue create --title "${task}" --description "" \
         --assignee @me \
         --label "status/backlog" \
         --label "kind/feature" \
@@ -34,7 +34,7 @@ function issues::task::feat {
 function issues::task::fix {
     local task
     task="fix: ${1}"
-    glab issue create --title "${task}" --body "" \
+    glab issue create --title "${task}" --description "" \
          --assignee @me \
          --label "status/backlog" \
          --label "kind/bug" \
@@ -44,7 +44,7 @@ function issues::task::fix {
 function issues::task::perf {
     local task
     task="perf: ${1}"
-    glab issue create --title "${task}" --body "" \
+    glab issue create --title "${task}" --description "" \
          --assignee @me \
          --label "status/backlog" \
          --label "kind/perf" \
@@ -54,7 +54,7 @@ function issues::task::perf {
 function issues::task::docs {
     local task
     task="docs: ${1}"
-    glab issue create --title "${task}" --body "" \
+    glab issue create --title "${task}" --description "" \
          --assignee @me \
          --label "status/backlog" \
          --label "kind/docs" \
@@ -64,7 +64,7 @@ function issues::task::docs {
 function issues::task::refactor {
     local task
     task="refactor: ${1}"
-    glab issue create --title "${task}" --body "" \
+    glab issue create --title "${task}" --description "" \
          --assignee @me \
          --label "status/backlog" \
          --label "kind/refactor" \
@@ -74,7 +74,7 @@ function issues::task::refactor {
 function issues::task::chore {
     local task
     task="chore: ${1}"
-    glab issue create --title "${task}" --body "" \
+    glab issue create --title "${task}" --description "" \
         --assignee @me \
         --label "status/backlog" \
         --label "kind/chore" \
@@ -86,14 +86,14 @@ function issues::pr::reviews {
 }
 
 function issues::pr {
-    local title reviewers body assignee
+    local title reviewers description assignee
     reviewers="$(issues::pr::reviews)"
     title="${1}"
-    body="$(issues::pr::body)"
+    description="$(issues::pr::body)"
     assignee="$(issues::username)"
     glab mr create -b "$(issues::pr::branch::base)" \
         --title "${title}" \
-        --body "${body}" \
+        --description "${description}" \
         --reviewer "${reviewers}" \
         --assignee "${assignee}"
 }
