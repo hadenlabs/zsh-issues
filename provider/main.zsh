@@ -16,7 +16,7 @@ function issues::provider::main::factory {
     esac
 
     # shellcheck source=/dev/null
-    source "${ZSH_ISSUES_PATH}"/provider/github.zsh
+    source "${ZSH_ISSUES_PATH}/provider/$(issus::internal::get::provider).zsh"
 
     # shellcheck source=/dev/null
     source "${ZSH_ISSUES_PATH}"/provider/alias.zsh
