@@ -20,3 +20,9 @@ source "${ZSH_ISSUES_PATH}"/provider/main.zsh
 
 # shellcheck source=/dev/null
 source "${ZSH_ISSUES_PATH}"/pkg/main.zsh
+
+# For this script to be able to get the exit status of the last executed command ($?)
+# it must be loaded before any other script or function that adds a precmd hook.
+# Only the first precmd hook access the original $?.
+autoload -Uz add-zsh-hook
+add-zsh-hook chpwd issues::provider::factory
