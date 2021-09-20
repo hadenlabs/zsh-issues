@@ -1,6 +1,6 @@
 
-# Created by https://www.toptal.com/developers/gitignore/api/python,node,go,zsh
-# Edit at https://www.toptal.com/developers/gitignore?templates=python,node,go,zsh
+# Created by https://www.toptal.com/developers/gitignore/api/python,node,go,zsh,sonar
+# Edit at https://www.toptal.com/developers/gitignore?templates=python,node,go,zsh,sonar
 
 ### Go ###
 # Binaries for programs and plugins
@@ -279,6 +279,10 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
+### Sonar ###
+#Sonar generated dir
+/.sonar/
+
 ### Zsh ###
 # Zsh compiled script + zrecompile backup
 *.zwc
@@ -308,4 +312,10 @@ zsdoc/data
 /tests/_output/*
 !/tests/_output/.gitkeep
 
-# End of https://www.toptal.com/developers/gitignore/api/python,node,go,zsh
+# End of https://www.toptal.com/developers/gitignore/api/python,node,go,zsh,sonar
+# custom git ignore files
+.scannerwork
+.secrets
+.task
+TMP_CHANGELOG.md
+bin
