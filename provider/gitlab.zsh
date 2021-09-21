@@ -86,14 +86,12 @@ function issues::pr::reviews {
 }
 
 function issues::pr {
-    local title reviewers description assignee
-    reviewers="$(issues::pr::reviews)"
+    local title description assignee
     title="${1}"
     description="$(issues::pr::body)"
     assignee="$(issues::username)"
     glab mr create -b "$(issues::pr::branch::base)" \
         --title "${title}" \
         --description "${description}" \
-        --reviewer "${reviewers}" \
         --assignee "${assignee}"
 }
