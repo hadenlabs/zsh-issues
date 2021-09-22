@@ -5,10 +5,10 @@ export ISSUES_TEMPLATES_PROVIDER="${ISSUES_TEMPLATES_PATH}/gitlab/templates/MERG
 
 export ISSUES_SEARCH_ARGS="no:assignee sort:created-desc"
 
-[ -z "$(git config --global gitlab.user)" ] && message_warning "You should set 'git config --global gitlab.user'."
+[ -z "${GITLAB_USER}" ] && message_warning "You should set var environment 'GITLAB_USER'."
 
 function issues::username {
-    git config --global gitlab.user
+   echo ${GITLAB_USER}
 }
 
 function issues::list {
