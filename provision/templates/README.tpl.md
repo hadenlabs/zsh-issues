@@ -1,3 +1,16 @@
+{{ defineDatasource "config" .Env.README_YAML | regexp.Replace ".*" "" -}} {{ defineDatasource "includes" .Env.README_INCLUDES | regexp.Replace ".*" "" -}}
+{{ if has (ds "config") "confluence" }}{{ $confluence := (ds "config").confluence -}}
+{{- if has $confluence "space" }} <!-- Space: {{ $confluence.space }} --> {{ end }}
+{{ if has $confluence "parent" }} <!-- Parent: {{ $confluence.parent }} --> {{- end -}}
+{{ if has $confluence "title" -}} <!-- Title: {{ $confluence.title }} --> {{ end }}
+{{ if has $confluence "images" -}}
+{{ range $image := $confluence.images -}}
+<!-- Attachment: {{ $image }} -->
+{{ end }}
+{{ end }}
+{{- end }}
+
+
 <!--
 
 
@@ -12,23 +25,14 @@
 
   -->
 
-{{ defineDatasource "config" .Env.README_YAML | regexp.Replace ".*" "" }} {{ defineDatasource "includes" .Env.README_INCLUDES | regexp.Replace ".*" "" }}
-
-{{ if has (ds "config") "confluence" }}
-{{ $confluence := (ds "config").confluence }}
-{{ if has $confluence "space" }} <!-- Space: {{ $confluence.space }} --> {{ end }}
-{{ if has $confluence "parent" }} <!-- Parent: {{ $confluence.parent }} --> {{ end }}
-{{ if has $confluence "title" }} <!-- Title: {{ $confluence.title }} --> {{ end }}
-{{ end }}
-
 
 {{ if has (ds "config") "badges" }}{{- range $badge := (ds "config").badges -}}{{ printf " [![%s](%s)](%s)" $badge.name $badge.image $badge.url }}{{ end }}{{ end }}
 
 # {{(ds "config").name}}{{ if gt (len (ds "config").name) 34 }}{{ print "\n\n" }}{{ end }}
 
-{{ if has (ds "config") "logo" }} ![{{(ds "config").name}}]({{ (ds "config").logo }}) {{- end -}}
+{{ if has (ds "config") "logo" -}} ![{{(ds "config").name}}]({{ (ds "config").logo }}) {{ end }}
 
-{{ if has (ds "config") "description" }} {{(ds "config").description }} {{ end }}
+{{ if has (ds "config") "description" -}} {{(ds "config").description }} {{ end }}
 
 {{ if has (ds "config") "screenshots" }}
 
@@ -39,6 +43,7 @@
 {{ end }}{{ end }}
 
 {{ if has (ds "config") "features" }}
+
 ## Features
 {{ range $feature := (ds "config").features }}{{printf "- %s\n" $feature}}{{ end }}
 {{ end }}
@@ -48,7 +53,6 @@
 ## Introduction
 
 {{ (ds "config").introduction -}} {{ end }}
-
 
 {{ if has (ds "config") "todo" }}
 
@@ -132,35 +136,7 @@ File a GitLab [issue]({{ printf "https://gitlab.com/%s/-/issues" (ds "config").g
 
 ## Contributing
 
-### Bug Reports & Feature Requests
-
-{{ if has (ds "config") "github_repo" }}
-Please use the [issue tracker]({{ printf "https://github.com/%s/issues" (ds "config").github_repo}}) to report any bugs or file feature requests.
-{{ else if has (ds "config") "gitlab_host" }}
-Please use the [issue tracker]({{ printf "https://%s/%s/-/issues" (ds "config").gitlab_host (ds "config").gitlab_repo}}) to report any bugs or file feature requests.
-{{ else if has (ds "config") "gitlab_repo" }}
-Please use the [issue tracker]({{ printf "https://gitlab.com/%s/issues" (ds "config").gitlab_repo}}) to report any bugs or file feature requests.
-{{ end }}
-
-### Development
-
-In general, PRs are welcome. We follow the typical "fork-and-pull" Git workflow.
-
-1.  **Fork** the repo on GitHub
-2.  **Clone** the project to your own machine
-3.  **Commit** changes to your own branch
-4.  **Push** your work back up to your fork
-{{ if has (ds "config") "github_repo" }}
-5.  Submit a **Pull Request** so that we can review your changes
-{{ else if has (ds "config") "gitlab_repo" }}
-5.  Submit a **Merge Request** so that we can review your changes
-{{ end }}
-
-{{ if has (ds "config") "github_repo" }}
-**NOTE:** Be sure to rebase the latest changes from "upstream" before making a pull request!
-{{ else if has (ds "config") "gitlab_repo" }}
-**NOTE:** Be sure to rebase the latest changes from "upstream" before making a merge request!
-{{ end }}
+See [Contributing](./docs/contributing.md).
 
 ## Module Versioning
 
