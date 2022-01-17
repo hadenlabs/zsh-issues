@@ -5,7 +5,7 @@ env:
 
 tasks:
   check:
-    desc: Validate dependences changelog tool
+    desc: Exist git-chglog
     run: once
     deps:
       - task: check:go
