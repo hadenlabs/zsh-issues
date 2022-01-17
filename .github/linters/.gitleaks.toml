@@ -231,19 +231,23 @@ title = "gitleaks config"
 # Global allowlist
 [allowlist]
   description = "Whitelisted files"
+  paths = [
+    '''^vendor/''',
+    '''^bower_components/''',
+    '''^public/js/bower_components/''',
+    '''^node_modules/''',
+    '''^theme/''',
+  ]
   files = [
     '''(.*?)(jpg|gif|png|doc|pdf|bin|mp3|mp4|mov|ttf|woff|woff2|eot|lock)$''',
     '''^\.gitignore$''',
     '''^\.gitleaks.toml$''',
     '''^yarn.lock$''',
-    '''^sonar-project.properties$''',
-  ]
-
-  paths = [
     '''^vendor/(.*?)$''',
+    '''^sonar-project.properties$''',
     '''^node_modules/(.*?)$''',
   ]
-
+  commits = []
 
 [whitelist]
   description = "image and html allowlists"
@@ -251,6 +255,7 @@ title = "gitleaks config"
     '''(.*?)(jpg|gif|png|doc|pdf|bin|mp3|mp4|mov|ttf|woff|woff2|eot|lock)$''',
     '''^\.gitignore$''',
     '''^\.gitleaks.toml$''',
+    '''^\.gitignore$''',
     '''^yarn.lock$''',
     '''^sonar-project.properties$''',
   ]
