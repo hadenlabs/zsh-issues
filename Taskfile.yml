@@ -1,14 +1,18 @@
 version: '3'
 
 includes:
+  changelog: ./provision/task/changelog.yml
   python: ./provision/task/python.yml
   git: ./provision/task/git.yml
   docs: ./provision/task/docs.yml
+  docker: ./provision/task/docker.yml
+  plantuml: ./provision/task/plantuml.yml
   gitflow: ./provision/task/gitflow.yml
   version: ./provision/task/version.yml
-  docker: ./provision/task/docker.yml
-  changelog: ./provision/task/changelog.yml
+  mark: ./provision/task/mark.yml
+  prettier: ./provision/task/prettier.yml
   sonar: ./provision/task/sonar.yml
+  diagrams: ./provision/diagrams/Taskfile.yml
 
 env:
   DOCKER:
@@ -41,6 +45,7 @@ vars:
     .secrets
     TMP_CHANGELOG.md
     .task
+    *.lock.hcl
 
 tasks:
   default:
@@ -88,12 +93,7 @@ tasks:
     run: once
     desc: Execute prettier files
     cmds:
-      - >-
-        prettier --config=.github/linters/prettier.config.js
-        --ignore-path=.github/linters/.prettierignore
-        '**/*.{js?(on),ts?(x),scss,md,y?(a)ml,gql,graphql?(s),less,mjml}'
-        --write=true
-        --list-different
+      - task: prettier:all
 
   setup:
     desc: Setup dependences of project
