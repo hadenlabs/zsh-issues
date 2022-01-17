@@ -4,10 +4,8 @@ export ISSUES_TEMPLATES_PROVIDER="${ISSUES_TEMPLATES_PATH}/github/templates/PULL
 
 export ISSUES_SEARCH_ARGS="no:assignee sort:created-desc"
 
-[ -z "${GITHUB_USER}" ] && message_warning "You should set var environment 'GITHUB_USER'."
-
 function issues::username {
-   echo ${GITHUB_USER}
+    git config github.user
 }
 
 function issues::list {
