@@ -23,5 +23,3 @@ function issues::pkg::main::factory {
 }
 
 issues::pkg::main::factory
-
-issues::pkg::config::setup
