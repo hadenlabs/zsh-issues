@@ -1,13 +1,11 @@
 <!-- Space: Projects -->
 <!-- Parent: ZshIssues -->
-<!-- Title: Env Vars ZshIssues -->
+<!-- Title: Components ZshIssues -->
 
 <!-- Label: ZshIssues -->
 <!-- Label: Project -->
-<!-- Label: Env Vars -->
+<!-- Label: Components -->
 <!-- Include: disclaimer.md -->
 <!-- Include: ac:toc -->
 
----
-
-## Env Vars
+# components

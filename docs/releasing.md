@@ -1,11 +1,11 @@
-<!-- Space: ZshIssues -->
-<!-- Parent: Project -->
-<!-- Title: Releasing -->
+<!-- Space: Projects -->
+<!-- Parent: ZshIssues -->
+<!-- Title: Releasing ZshIssues -->
 
 <!-- Label: ZshIssues -->
 <!-- Label: Project -->
 <!-- Label: Releasing -->
-<!-- Include: docs/disclaimer.md -->
+<!-- Include: disclaimer.md -->
 <!-- Include: ac:toc -->
 
 # Releasing

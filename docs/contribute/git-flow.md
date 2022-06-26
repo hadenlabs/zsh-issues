@@ -1,12 +1,12 @@
 <!-- Space: ZshIssues -->
 <!-- Parent: Project -->
-<!-- Title: Contributing GitFlow -->
+<!-- Title: Contributing GitFlow ZshIssues -->
 
 <!-- Label: ZshIssues -->
 <!-- Label: Project -->
 <!-- Label: Contributing -->
 <!-- Label: GitFlow -->
-<!-- Include: docs/disclaimer.md -->
+<!-- Include: ./../disclaimer.md -->
 <!-- Include: ac:toc -->
 
 To contribute to zsh-issues project on [GitHub](https://github.com/hadenlabs/zsh-issues), We use Gitflow (See more [here](https://datasift.github.io/gitflow/IntroducingGitFlow.html)) In a nutshell, it means that you should branch from the main repository and contribute back by making [pull request](https://github.com/hadenlabs/zsh-issues/pulls).
@@ -17,7 +17,7 @@ To contribute to zsh-issues project on [GitHub](https://github.com/hadenlabs/zsh
 
 To follow the instructions in this guide and start contributing to zsh-issues project on Gitlab:
 
-1.  **Fork** the repo on GitLab
+1.  **Fork** the repo on GitHub
 2.  **Clone** the project to your own machine
 
 To synchronize with the main repository, add it to the remotes:

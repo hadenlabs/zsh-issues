@@ -10,10 +10,6 @@ name: zsh-issues
 email:
   support: support@hadenlabs.com
 
-confluence:
-  space: ZshIssues
-  title: Project
-
 # Logo for this project
 #logo: docs/logo.png
 
@@ -31,18 +27,28 @@ badges:
   - name: Lint
     image: https://img.shields.io/github/workflow/status/hadenlabs/zsh-issues/lint-code
     url: https://github.com/hadenlabs/zsh-issues/actions?workflow=lint-code
+  - name: CI
+    image: https://img.shields.io/github/workflow/status/hadenlabs/zsh-issues/ci
+    url: https://github.com/hadenlabs/zsh-issues/actions?workflow=ci
+  - name: Test
+    image: https://img.shields.io/github/workflow/status/hadenlabs/zsh-issues/test
+    url: https://github.com/hadenlabs/zsh-issues/actions?workflow=test
   - name: pre-commit
     image: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
     url: https://github.com/pre-commit/pre-commit
   - name: Conventional Commits
     image: https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow
     url: https://conventionalcommits.org
+  - name: KeepAChangelog
+    image: https://img.shields.io/badge/changelog-Keep%20a%20Changelog%20v1.0.0-orange
+    url: https://keepachangelog.com
 
 requirements: |-
 
   This is a list of plugins that need to be installed previously to enjoy all the goodies of this configuration:
 
-  * [zsh-core](https://github.com/hadenlabs/zsh-core)
+  - [zsh-core](https://github.com/hadenlabs/zsh-core)
+  - [gomplate](https://github.com/hairyhenderson/gomplate)
   - [python](https://www.python.org)
   - [taskfile](https://github.com/go-task/task)
 
@@ -57,3 +63,6 @@ installation:
 
 include:
   - 'docs/functions.md'
+
+usages:
+  - docs/usage.md
