@@ -6,7 +6,7 @@ function issues::internal::git::flow::main {
 }
 
 function issues::internal::git::flow::develop {
-    git config --get "gitflow.branch.develop"
+    git config --get "gitflow.branch.develop" || echo "main"
 }
 
 function issues::internal::git::branch::name {
