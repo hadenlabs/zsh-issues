@@ -1,16 +1,16 @@
 #!/usr/bin/env ksh
 # -*- coding: utf-8 -*-
 
-function issues::internal::git::workflows {
-    git config --get "git.workflows" || echo "githubflow"
+function issues::internal::git::workflow {
+    git config --get "git.workflow" || echo "githubflow"
 }
 
 function issues::internal::git::branch::name {
     git symbolic-ref --short HEAD
 }
 
-function issues::internal::get::worflow {
-    issues::internal::git::workflows
+function issues::internal::get::workflow {
+    issues::internal::git::workflow
 }
 
 function issues::internal::get::provider {
