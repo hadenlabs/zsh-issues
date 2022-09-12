@@ -18,8 +18,6 @@ function issues::workflow::main::factory {
     # shellcheck source=/dev/null
     source "${ZSH_ISSUES_PATH}/workflow/$(issues::internal::get::workflow).zsh"
 
-    # shellcheck source=/dev/null
-    source "${ZSH_ISSUES_PATH}"/workflow/alias.zsh
 }
 
 issues::workflow::main::factory
