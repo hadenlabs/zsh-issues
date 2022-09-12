@@ -19,6 +19,9 @@ source "${ZSH_ISSUES_PATH}"/internal/main.zsh
 source "${ZSH_ISSUES_PATH}"/provider/main.zsh
 
 # shellcheck source=/dev/null
+source "${ZSH_ISSUES_PATH}"/workflow/main.zsh
+
+# shellcheck source=/dev/null
 source "${ZSH_ISSUES_PATH}"/pkg/main.zsh
 
 # For this script to be able to get the exit status of the last executed command ($?)
