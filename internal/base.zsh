@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 function issues::internal::git::workflow {
-    git config --get "git.workflow" || echo "githubflow"
+    git config --get "workflow.name" || echo "githubflow"
 }
 
 function issues::internal::git::branch::name {
