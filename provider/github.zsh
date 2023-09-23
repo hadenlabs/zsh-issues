@@ -23,9 +23,7 @@ function issues::task::feat {
     task="feat: ${1}"
     gh issue create --title "${task}" --body "" \
         --assignee @me \
-        --label "status/backlog" \
-        --label "kind/feature" \
-        --label "priority/high"
+        --label "enhancement"
 }
 
 function issues::task::fix {
@@ -33,9 +31,7 @@ function issues::task::fix {
     task="fix: ${1}"
     gh issue create --title "${task}" --body "" \
          --assignee @me \
-         --label "status/backlog" \
-         --label "kind/bug" \
-         --label "priority/critical"
+         --label "bug"
 }
 
 function issues::task::perf {
@@ -43,9 +39,7 @@ function issues::task::perf {
     task="perf: ${1}"
     gh issue create --title "${task}" --body "" \
          --assignee @me \
-         --label "status/backlog" \
-         --label "kind/perf" \
-         --label "priority/medium"
+          --label "enhancement"
 }
 
 function issues::task::docs {
@@ -53,9 +47,7 @@ function issues::task::docs {
     task="docs: ${1}"
     gh issue create --title "${task}" --body "" \
          --assignee @me \
-         --label "status/backlog" \
-         --label "kind/docs" \
-         --label "priority/medium"
+         --label "documentation"
 }
 
 function issues::task::refactor {
@@ -63,9 +55,7 @@ function issues::task::refactor {
     task="refactor: ${1}"
     gh issue create --title "${task}" --body "" \
          --assignee @me \
-         --label "status/backlog" \
-         --label "kind/refactor" \
-         --label "priority/medium"
+          --label "enhancement"
 }
 
 function issues::task::chore {
@@ -73,9 +63,7 @@ function issues::task::chore {
     task="chore: ${1}"
     gh issue create --title "${task}" --body "" \
         --assignee @me \
-        --label "status/backlog" \
-        --label "kind/chore" \
-        --label "priority/medium"
+        --label "enhancement"
 }
 
 function issues::pr::reviews {
