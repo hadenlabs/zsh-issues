@@ -1,7 +1,6 @@
 <!-- Space: Projects -->
 <!-- Parent: ZshIssues -->
 <!-- Title: Releasing ZshIssues -->
-
 <!-- Label: ZshIssues -->
 <!-- Label: Project -->
 <!-- Label: Releasing -->
